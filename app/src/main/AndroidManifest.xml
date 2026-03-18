@@ -511,6 +511,11 @@
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="connectedDevice|location" />
+        <service
+            android:name=".cgm.caresensair.CareSensAirService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice|location" />
 
         <activity
             android:name=".ShareTest"

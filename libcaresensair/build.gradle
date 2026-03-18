@@ -1,0 +1,56 @@
+
+plugins {
+    id 'com.android.library'
+}
+repositories {
+    google()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+android {
+    compileSdkVersion 34
+
+    defaultConfig {
+        minSdkVersion 24
+        targetSdkVersion 24
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    namespace 'com.opencaresens.xdrip'
+
+}
+
+dependencies {
+
+    dependencies {
+        implementation "no.nordicsemi.android:ble:2.6.1"
+        implementation 'no.nordicsemi.android:ble-common:2.6.1'
+        implementation "no.nordicsemi.android.support.v18:scanner:1.5.1"
+        implementation 'com.github.erikdebruijn:OpenCareSens-air:v0.1.0'
+    }
+
+    testImplementation 'junit:junit:4.13.2'
+
+    // you will want to install the android studio lombok plugin
+    compileOnly 'org.projectlombok:lombok:1.18.42' //
+    annotationProcessor "org.projectlombok:lombok:1.18.42"
+    // use lombok in unit tests
+    testCompileOnly 'org.projectlombok:lombok:1.18.42'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.42'
+
+}
