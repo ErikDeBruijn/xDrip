@@ -16,4 +16,10 @@ public enum DataKey {
     SEQUENCE_NUMBER,
     SENSOR_ID,
     SENSOR_WARMED_UP,
+    FIRMWARE_VERSION,
+    MODEL_NUMBER,
+    SERIAL_NUMBER,
+    EAPP,
+    VREF,
+    SENSOR_START_TIME,
 }

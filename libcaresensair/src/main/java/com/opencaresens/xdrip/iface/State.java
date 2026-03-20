@@ -12,10 +12,16 @@ public enum State {
     SCAN_STOPPED,
     CONNECTING,
     CONNECTED,
+    PAIRING,
+    BONDING,
+    BONDED,
+    BONDING_FAILED,
     CONFIGURING,
+    SETUP_FAILED,
     READY,
     CONNECT_FAILED,
     DISCONNECTED,
+    SENSOR_ENDED,
     SHUTDOWN,
     UNKNOWN;
 
@@ -44,6 +50,8 @@ public enum State {
         switch (state) {
             case CONNECT_FAILED:
             case SCANNING_ERROR:
+            case BONDING_FAILED:
+            case SETUP_FAILED:
                 return true;
             default:
                 return false;

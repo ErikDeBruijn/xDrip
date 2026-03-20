@@ -17,4 +17,16 @@ public interface Listener {
     void onState(State state);
 
     void onError(String message);
+
+    /**
+     * Called when the device requires a PIN for Bluetooth bonding.
+     * The PIN is a 6-digit number printed on the sensor (also readable via NFC).
+     */
+    void onPairingRequired();
+
+    /**
+     * Called when the pairing handshake fails.
+     * @param reason human-readable failure reason
+     */
+    void onPairingFailed(String reason);
 }

@@ -118,6 +118,17 @@ public class CareSensAirService extends ForegroundService {
         public void onError(String message) {
             UserError.Log.e(TAG, "Error: " + message);
         }
+
+        @Override
+        public void onPairingRequired() {
+            UserError.Log.w(TAG, "Device requires a PIN for pairing. "
+                    + "Enter the 6-digit PIN from the sensor in CareSens Air settings.");
+        }
+
+        @Override
+        public void onPairingFailed(String reason) {
+            UserError.Log.e(TAG, "Pairing failed: " + reason);
+        }
     };
 
 
